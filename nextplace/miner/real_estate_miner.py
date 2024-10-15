@@ -19,6 +19,7 @@ class RealEstateMiner(BaseMinerNeuron):
 
     # OVERRIDE | Required
     def forward(self, synapse: RealEstateSynapse) -> RealEstateSynapse:
+        print(f"Forwarding synapse: {synapse}")
         self.model.run_inference(synapse)
         self._set_force_update_prediction_flag(synapse)
         return synapse
